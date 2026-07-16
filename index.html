@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manish Das — Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Montserrat Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #080405; /* Deep Obsidian Black */
+        }
+        
+        /* Smooth Custom Entry Fade Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .delay-2 { animation-delay: 0.4s; opacity: 0; }
+        
+        /* Custom image hover glow effect */
+        .glow-hover {
+            position: relative;
+            transition: all 0.5s ease;
+        }
+        .glow-hover::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            box-shadow: 0 0 0px rgba(244, 63, 94, 0);
+            transition: all 0.5s ease;
+            pointer-events: none;
+        }
+        .glow-hover:hover::after {
+            box-shadow: 0 0 30px rgba(244, 63, 94, 0.25);
+        }
+    </style>
+</head>
+<body class="text-zinc-100 antialiased overflow-x-hidden selection:bg-rose-600 selection:text-white">
+
+    <!-- FIXED NAVIGATION BAR -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#080405]/80 backdrop-blur-xl border-b border-zinc-900/80 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-black text-xl tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-rose-500 hover:opacity-80 transition-opacity">
+                MANISH.DAS
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-widest text-zinc-400">
+                <a href="#work" class="hover:text-rose-400 transition-colors duration-300">Selected Work</a>
+                <a href="#about" class="hover:text-rose-400 transition-colors duration-300">About Index</a>
+                <a href="mailto:pepticasp67@gmail.com" class="px-5 py-2.5 rounded-full bg-zinc-900 border border-zinc-800 text-white hover:bg-rose-600 hover:border-rose-500 transition-all duration-300 shadow-lg shadow-black/40">Connect</a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-btn" class="md:hidden text-zinc-400 hover:text-white transition-colors">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropout Nav -->
+        <div id="mobile-dropdown" class="hidden absolute top-20 left-0 w-full bg-[#080405] border-b border-zinc-900 p-6 flex flex-col gap-4 text-sm font-bold uppercase tracking-wider text-zinc-400">
+            <a href="#work" class="hover:text-rose-400 transition-colors">Selected Work</a>
+            <a href="#about" class="hover:text-rose-400 transition-colors">About Index</a>
+            <a href="mailto:pepticasp67@gmail.com" class="text-white text-center py-3 bg-zinc-900 border border-zinc-800 rounded-xl">Connect</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION WITH PROFILE CONTAINER -->
+    <main class="max-w-6xl mx-auto px-6 pt-36 md:pt-44 pb-24">
+        
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-32">
+            <!-- Left Info Area -->
+            <div class="md:col-span-7 space-y-6 text-left order-2 md:order-1">
+                <div class="animate-fade-in inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase bg-rose-500/10 text-rose-400 border border-rose-500/20">
+                    <span class="w-2 h-2 rounded-full bg-rose-500 animate-ping"></span> 10th Standard Digital Engineer
+                </div>
+                
+                <h1 class="animate-fade-in delay-1 text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.1] text-white">
+                    Turning abstract <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-indigo-500">visions</span> into flawless code architecture.
+                </h1>
+                
+                <p class="animate-fade-in delay-2 text-base sm:text-lg text-zinc-400 max-w-xl font-light leading-relaxed">
+                    Self-taught Frontend & Full-Stack Developer, UI/UX Designer, and mobile app engineer based out of Gujarat, India. No degree required—just pure raw execution.
+                </p>
+                
+                <div class="animate-fade-in delay-2 pt-4 flex flex-col sm:flex-row gap-4">
+                    <a href="#work" class="px-8 py-4 bg-rose-600 hover:bg-rose-500 text-white text-center font-bold text-xs uppercase tracking-widest rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-rose-600/20">
+                        Explore Production
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Photo Area -->
+            <div class="md:col-span-5 order-1 md:order-2 flex justify-center animate-fade-in">
+                <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl overflow-hidden border-2 border-zinc-800/80 bg-zinc-900 group glow-hover transform hover:rotate-2 hover:scale-105 transition-all duration-500">
+                    <!-- 📸 USER PROFILE PHOTO PLACEHOLDER: Swap src with your real photo, e.g., "./my-avatar.jpg" -->
+                    <img src="https://images.unsplash.com/photo-1607799279861-4dd421887fb3?auto=format&fit=crop&w=600&q=80" 
+                         alt="Manish Das Profile" 
+                         class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#080405] via-transparent to-transparent opacity-60"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED PRODUCTION SECTION (WITHOUT MOCKUP PHOTO) -->
+        <section id="work" class="mb-32 scroll-mt-28">
+            <div class="flex items-center justify-between border-b border-zinc-900 pb-4 mb-12">
+                <h2 class="text-xs font-black tracking-widest uppercase text-zinc-500">Selected Work Showcase</h2>
+                <span class="text-xs font-bold tracking-widest text-rose-500 uppercase">Featured</span>
+            </div>
+
+            <!-- Project Card Wrapper (Updated to single-column layout) -->
+            <div class="group border border-zinc-900/60 bg-zinc-950/20 rounded-3xl overflow-hidden hover:border-rose-500/20 transition-all duration-500 transform hover:scale-[1.01] shadow-2xl">
+                
+                <!-- Project Text Execution -->
+                <div class="p-8 sm:p-12 flex flex-col justify-between space-y-8">
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="text-[10px] font-black tracking-widest uppercase bg-rose-500/10 text-rose-400 px-3 py-1 rounded-md border border-rose-500/20">
+                                Full-Stack Platform
+                            </span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight group-hover:text-rose-400 transition-colors duration-300">
+                            Silvernova Motion Pictures <br><span class="text-rose-500">"Red Lotus"</span>
+                        </h3>
+                        <p class="text-zinc-400 text-sm font-light leading-relaxed max-w-3xl">
+                            An immersive, production-grade video application engineered for high-performance content streaming. Tailored with a customized cinematic user flow, extreme responsive layout testing, and robust deployment logic.
+                        </p>
+                    </div>
+
+                    <!-- Tech Tags Layout -->
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-[11px] font-bold tracking-wider text-zinc-300 bg-zinc-900/60 px-3 py-1.5 rounded-lg border border-zinc-800">React</span>
+                        <span class="text-[11px] font-bold tracking-wider text-zinc-300 bg-zinc-900/60 px-3 py-1.5 rounded-lg border border-zinc-800">Tailwind CSS</span>
+                        <span class="text-[11px] font-bold tracking-wider text-zinc-300 bg-zinc-900/60 px-3 py-1.5 rounded-lg border border-zinc-800">Node.js</span>
+                        <span class="text-[11px] font-bold tracking-wider text-rose-400 bg-rose-500/5 px-3 py-1.5 rounded-lg border border-rose-500/10">Vercel Cloud</span>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="pt-4 flex items-center gap-6">
+                        <a href="https://red-lotus-project.vercel.app" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white hover:text-rose-400 transition-colors group/link">
+                            Launch App <i data-lucide="arrow-up-right" class="w-4 h-4 transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform"></i>
+                        </a>
+                        <a href="https://github.com/aspcodeX" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-zinc-300 transition-colors">
+                            Code Base
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAPABILITIES MATRIX GRID WITH SHIFTING HOVERS -->
+        <section class="mb-32">
+            <div class="border-b border-zinc-900 pb-4 mb-12">
+                <h2 class="text-xs font-black tracking-widest uppercase text-zinc-500">Core Ecosystem Capabilities</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Box 1 -->
+                <div class="p-6 bg-zinc-950/30 border border-zinc-900 rounded-2xl hover:border-rose-500/30 hover:bg-zinc-900/20 transition-all duration-300 group">
+                    <div class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-rose-500 transition-colors mb-4">
+                        <i data-lucide="layout"></i>
+                    </div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-2">Frontend</h4>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-light">Interactive interfaces utilizing pixel-perfect styling engines, structured frameworks, and optimized state scripts.</p>
+                </div>
+                <!-- Box 2 -->
+                <div class="p-6 bg-zinc-950/30 border border-zinc-900 rounded-2xl hover:border-indigo-500/30 hover:bg-zinc-900/20 transition-all duration-300 group">
+                    <div class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-indigo-400 transition-colors mb-4">
+                        <i data-lucide="database"></i>
+                    </div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-2">Full-Stack</h4>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-light">Integrating database environments, secure application logic endpoints, and microservice structures seamlessly.</p>
+                </div>
+                <!-- Box 3 -->
+                <div class="p-6 bg-zinc-950/30 border border-zinc-900 rounded-2xl hover:border-emerald-500/30 hover:bg-zinc-900/20 transition-all duration-300 group">
+                    <div class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-emerald-400 transition-colors mb-4">
+                        <i data-lucide="palette"></i>
+                    </div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-2">UI/UX Design</h4>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-light">Prototyping premium responsive grids, graphic components, and functional high-fidelity interactive flow layouts inside Figma.</p>
+                </div>
+                <!-- Box 4 -->
+                <div class="p-6 bg-zinc-950/30 border border-zinc-900 rounded-2xl hover:border-amber-500/30 hover:bg-zinc-900/20 transition-all duration-300 group">
+                    <div class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-400 group-hover:text-amber-400 transition-colors mb-4">
+                        <i data-lucide="smartphone"></i>
+                    </div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-2">Native Mobile</h4>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-light">Developing standalone mobile software blueprints optimized for performance, asset scalability, and rapid runtime testing.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DETAILED PROFILE DISCLOSURE INDEX -->
+        <section id="about" class="grid grid-cols-1 md:grid-cols-12 gap-12 border-t border-zinc-900/80 pt-16 scroll-mt-28">
+            <div class="md:col-span-4">
+                <h2 class="text-xs font-black tracking-widest uppercase text-zinc-500">Operational Profile</h2>
+            </div>
+            <div class="md:col-span-8 space-y-6 text-zinc-400 text-sm font-light leading-relaxed">
+                <p>
+                    I operate under a simple mandate: **Build systems that execute flawlessly.** While simultaneously clearing standard high-school curriculum goals in Daman, Gujarat, I map production strategies, code components, and configure secure architecture pipelines independently.
+                </p>
+                <p>
+                    From modern promotional web landing systems to full-scale digital distribution portals like the Silvernova video layout, I engineer cross-platform assets designed to capture user trust instantly.
+                </p>
+            </div>
+        </section>
+
+        <!-- HIGH-IMPACT CONTACT ACCELERATOR -->
+        <section class="mt-32 border-t border-zinc-900 pt-16">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-gradient-to-br from-zinc-950 to-[#0e0608] border border-zinc-900 p-8 sm:p-12 rounded-3xl">
+                <div class="md:col-span-5">
+                    <h3 class="text-2xl font-black text-white tracking-tight">Have a concept?<br>Let's deploy it.</h3>
+                </div>
+                <div class="md:col-span-7 flex flex-wrap gap-x-8 gap-y-4 text-xs font-bold uppercase tracking-widest">
+                    <a href="mailto:pepticasp67@gmail.com" class="text-white hover:text-rose-400 transition-colors flex items-center gap-1.5 group/mail">
+                        Email Address <i data-lucide="arrow-up-right" class="w-4 h-4 transform group-hover/mail:translate-x-0.5 group-hover/mail:-translate-y-0.5 transition-transform"></i>
+                    </a>
+                    <a href="https://github.com/aspcodeX" target="_blank" class="text-zinc-400 hover:text-rose-400 transition-colors flex items-center gap-1.5 group/git">
+                        GitHub Profile <i data-lucide="arrow-up-right" class="w-4 h-4 transform group-hover/git:translate-x-0.5 group-hover/git:-translate-y-0.5 transition-transform"></i>
+                    </a>
+                    <a href="https://instagram.com/luffy__4567" target="_blank" class="text-zinc-400 hover:text-rose-400 transition-colors flex items-center gap-1.5 group/insta">
+                        Instagram DM <i data-lucide="arrow-up-right" class="w-4 h-4 transform group-hover/insta:translate-x-0.5 group-hover/insta:-translate-y-0.5 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- NEW GIANT EDITORIAL FOOTER AS REQUESTED -->
+    <footer class="w-full bg-black border-t border-zinc-900 mt-20 overflow-hidden select-none">
+        <!-- Massive Typographic Banner Block -->
+        <div class="max-w-7xl mx-auto pt-16 pb-12 px-6">
+            <h2 class="text-[11.5vw] font-black uppercase tracking-tighter text-center leading-[0.85] text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-400 to-zinc-900">
+                LET'S CREATE<br>SOMETHING
+            </h2>
+        </div>
+        
+        <!-- Bottom Metadata Grid Bar Matching the Screenshot Layout -->
+        <div class="border-t border-zinc-900/60 py-6 bg-[#040203]">
+            <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] sm:text-[11px] text-zinc-600 font-bold uppercase tracking-widest">
+                <p>MANISH DAS FULL STACK DEVELOPER</p>
+                <div class="flex gap-6 text-zinc-500">
+                    <a href="#work" class="hover:text-white transition-colors">WORK</a>
+                    <a href="#about" class="hover:text-white transition-colors">ABOUT</a>
+                    <a href="mailto:pepticasp67@gmail.com" class="hover:text-white transition-colors">CONTACT</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Mobile Functionality -->
+    <script>
+        lucide.createIcons();
+
+        // Responsive Mobile Bar Mechanism
+        const mobileBtn = document.getElementById('mobile-btn');
+        const mobileDropdown = document.getElementById('mobile-dropdown');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileDropdown.classList.toggle('hidden');
+        });
+
+        // Auto-close overlay drawer on click
+        const links = mobileDropdown.querySelectorAll('a');
+        links.forEach(l => {
+            l.addEventListener('click', () => {
+                mobileDropdown.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
